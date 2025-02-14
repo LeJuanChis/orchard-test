@@ -1,0 +1,10 @@
+{{ attach_library('orchard_core/card') }}
+
+<div class="card">
+    <img width="200px" height="200px" src="{{ product['image'] }}" alt="Prueba">
+    <h2>{{product['name']}}</h2>
+    <p>{{product['summary']}}</p>
+
+    
+    <p  class="button"> <a href="{{ path('entity.node.canonical', {'node': content.id()}) }}">View product</a> </p>
+</div>

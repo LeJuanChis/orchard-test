@@ -1,0 +1,29 @@
+uuid: 3460b6cc-011c-4640-b05a-853f1de34b6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-link
+  module:
+    - system
+  theme:
+    - olivero
+id: olivero_menulink
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: 'system_menu_block:menu-link'
+settings:
+  id: 'system_menu_block:menu-link'
+  label: 'Menu link'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/1

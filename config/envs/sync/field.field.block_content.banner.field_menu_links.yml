@@ -1,0 +1,27 @@
+uuid: 6b88f45b-1f62-4c8e-b9c6-85efc13835ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.banner
+    - field.storage.block_content.field_menu_links
+id: block_content.banner.field_menu_links
+field_name: field_menu_links
+entity_type: block_content
+bundle: banner
+label: 'Menu links'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles: {  }
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

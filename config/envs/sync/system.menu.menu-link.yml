@@ -1,0 +1,8 @@
+uuid: 0cccf0ea-2c52-4bb5-9454-ab0555775457
+langcode: en
+status: true
+dependencies: {  }
+id: menu-link
+label: 'Menu link'
+description: ''
+locked: false

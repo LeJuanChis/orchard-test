@@ -1,0 +1,10 @@
+name: task1
+type: theme
+base theme: olivero
+description: 'A custom theme for the first task in the Orchard php backend developer interview'
+package: custom
+version: '1.0'
+core_version_requirement: ^11
+
+libraries:
+  - task1/global-styles

@@ -1,0 +1,22 @@
+uuid: 3dc7e4b9-ea6e-44c8-b23a-e76341c700f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - task1
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: task1_content
+theme: task1
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

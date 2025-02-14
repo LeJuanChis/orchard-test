@@ -1,0 +1,8 @@
+uuid: 55b33588-dcf2-4b32-b0e1-b0231fbe2d07
+langcode: en
+status: true
+dependencies: {  }
+id: banner
+label: Banner
+revision: false
+description: 'Component used to create a banner'

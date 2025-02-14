@@ -1,0 +1,60 @@
+<?php
+
+
+/**
+ * @file
+ * Contains the functionality for the orchard core module.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function orchard_core_help($route_name, \Drupal\Core\Routing\RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.orchard_core':
+      return t('Hi from the Orchard core module.');
+  }
+}
+
+/**
+ * Implement hook_entity_presave() to modify the products before save the entity
+ */
+function orchard_core_entity_presave(Drupal\Core\Entity\EntityInterface $entity){
+    
+    $entity_type = $entity->bundle();
+
+    switch ($entity_type) {
+        case 'products':
+            $original_entity = $entity->original;
+            $original_entity_field = isset($original_entity) ? $original_entity->get('field_product_of_the_day')->value : 0;
+            if ($entity->hasField('field_product_of_the_day') && ($entity->get('field_product_of_the_day')->value == 1 && $original_entity_field == 0 )){
+                // Count the existing products
+                $query = \Drupal::entityQuery('node')
+                ->condition('type', 'products')
+                ->condition('field_product_of_the_day', 1)
+                ->accessCheck(FALSE);
+                $count = $query->count()->execute();
+
+                // Dont let save the product if there are more that 5 with the 'field_product_of_the_day' checked
+                if ($count >= 5) {
+                    \Drupal::messenger()->addError(t('Only 5 products can be selected as "product of the day" at the same time.'));
+                    $entity->set('field_product_of_the_day', 0); // Uncheck the field
+                }
+            }
+            break;
+        default:
+            
+            break;
+    }
+}
+
+function orchard_core_theme() {
+    return [
+        'products_daily_block' => [
+            'variables' => [
+                'content' => NULL,
+                'product' => NULL
+            ]
+        ]
+    ];
+}

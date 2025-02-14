@@ -1,0 +1,25 @@
+uuid: ab3ba468-647d-409b-8bc2-0b603b6217af
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - task1
+_core:
+  default_config_hash: n_nlgjggHVfQt2H__zvLOKB2YtjPDbQ5tHijF9LE1aM
+id: task1_site_branding
+theme: task1
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

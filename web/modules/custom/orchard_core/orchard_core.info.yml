@@ -1,0 +1,5 @@
+name: Orchard core
+type: module
+description: Module used to implement the functionality of the task number 2 from the tecnical interview
+core_version_requirement: ^11
+package: Custom

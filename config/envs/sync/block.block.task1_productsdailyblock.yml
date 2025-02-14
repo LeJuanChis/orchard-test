@@ -1,0 +1,25 @@
+uuid: 122e24d5-d0be-4478-baac-df782d11571b
+langcode: en
+status: true
+dependencies:
+  module:
+    - orchard_core
+    - system
+  theme:
+    - task1
+id: task1_productsdailyblock
+theme: task1
+region: content
+weight: 0
+provider: null
+plugin: products_daily_block
+settings:
+  id: products_daily_block
+  label: 'Products daily block'
+  label_display: visible
+  provider: orchard_core
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

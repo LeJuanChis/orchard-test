@@ -1,0 +1,29 @@
+uuid: 51ef348c-14e9-4ccc-b199-abe3a150681a
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-link
+  module:
+    - system
+  theme:
+    - task1
+id: task1_menulink
+theme: task1
+region: content
+weight: 0
+provider: null
+plugin: 'system_menu_block:menu-link'
+settings:
+  id: 'system_menu_block:menu-link'
+  label: 'Menu link'
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node/1
